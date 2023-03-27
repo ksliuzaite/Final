@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE Menu [
+        <!ELEMENT Menu (id|title|dishes)*>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT title (#PCDATA)>
+        <!ELEMENT dishes (dish)*>
+        <!ELEMENT dish (id|nameofdish|price|ingredients|allergens)*>
+        <!ELEMENT nameofdish (#PCDATA)>
+        <!ELEMENT price (#PCDATA)>
+        <!ELEMENT ingredients (ingredient)*>
+        <!ELEMENT ingredient (id|nameofingredient)*>
+        <!ELEMENT nameofingredient (#PCDATA)>
+        <!ELEMENT allergens (allergen)*>
+        <!ELEMENT allergen (id|nameofallergen)*>
+        <!ELEMENT nameofallergen (#PCDATA)>
+        ]>
+<Menu>
+    <id>0</id>
+    <title>Restaurant menu</title>
+    <dishes>
+        <dish>
+            <id>0</id>
+            <nameofdish>Hawaiian pizza</nameofdish>
+            <price>9</price>
+            <ingredients>
+                <ingredient>
+                    <id>0</id>
+                    <nameofingredient>Mozzarella</nameofingredient>
+                </ingredient>
+                <ingredient>
+                    <id>0</id>
+                    <nameofingredient>Tomato sauce</nameofingredient>
+                </ingredient>
+                <ingredient>
+                    <id>0</id>
+                    <nameofingredient>pineapples</nameofingredient>
+                </ingredient>
+                <ingredient>
+                    <id>0</id>
+                    <nameofingredient>Chicken fillet</nameofingredient>
+                </ingredient>
+            </ingredients>
+            <allergens>
+                <allergen>
+                    <id>0</id>
+                    <nameofallergen>Gluten</nameofallergen>
+                </allergen>
+                <allergen>
+                    <id>0</id>
+                    <nameofallergen>Lactose</nameofallergen>
+                </allergen>
+            </allergens>
+        </dish>
+        <dish>
+            <id>0</id>
+            <nameofdish>Pork ribs with homemade chipotle - mustard sauce</nameofdish>
+            <price>12</price>
+            <ingredients>
+                <ingredient>
+                    <id>0</id>
+                    <nameofingredient>Pork ribs</nameofingredient>
+                </ingredient>
+                <ingredient>
+                    <id>0</id>
+                    <nameofingredient>Chipotle - mustard sauce</nameofingredient>
+                </ingredient>
+                <ingredient>
+                    <id>0</id>
+                    <nameofingredient>Coleslaw salad</nameofingredient>
+                </ingredient>
+                <ingredient>
+                    <id>0</id>
+                    <nameofingredient>Potato wedges</nameofingredient>
+                </ingredient>
+                <ingredient>
+                    <id>0</id>
+                    <nameofingredient>Crispy onion rings</nameofingredient>
+                </ingredient>
+            </ingredients>
+            <allergens>
+                <allergen>
+                    <id>0</id>
+                    <nameofallergen>Gluten</nameofallergen>
+                </allergen>
+                <allergen>
+                    <id>0</id>
+                    <nameofallergen>Lactose</nameofallergen>
+                </allergen>
+                <allergen>
+                    <id>0</id>
+                    <nameofallergen>Mustard and their products</nameofallergen>
+                </allergen>
+                <allergen>
+                    <id>0</id>
+                    <nameofallergen>Eggs and their products</nameofallergen>
+                </allergen>
+            </allergens>
+        </dish>
+    </dishes>
+</Menu>
+

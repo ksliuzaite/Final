@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Menu" type="MenuType"/>
+  <xs:complexType name="ingredientType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="id"/>
+      <xs:element name="nameofingredient">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Mozzarella"/>
+            <xs:enumeration value="Tomato sauce"/>
+            <xs:enumeration value="pineapples"/>
+            <xs:enumeration value="Chicken fillet"/>
+            <xs:enumeration value="Pork ribs"/>
+            <xs:enumeration value="Chipotle - mustard sauce"/>
+            <xs:enumeration value="Coleslaw salad"/>
+            <xs:enumeration value="Potato wedges"/>
+            <xs:enumeration value="Crispy onion rings"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ingredientsType">
+    <xs:sequence>
+      <xs:element type="ingredientType" name="ingredient" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="allergenType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="id"/>
+      <xs:element name="nameofallergen">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Gluten"/>
+            <xs:enumeration value="Lactose"/>
+            <xs:enumeration value="Mustard and their products"/>
+            <xs:enumeration value="Eggs and their products"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="allergensType">
+    <xs:sequence>
+      <xs:element type="allergenType" name="allergen" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dishType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="id"/>
+      <xs:element name="nameofdish">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Hawaiian pizza"/>
+            <xs:enumeration value="Pork ribs with homemade chipotle - mustard sauce"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="price">
+        <xs:simpleType>
+          <xs:restriction base="xs:byte">
+            <xs:enumeration value="9"/>
+            <xs:enumeration value="12"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="ingredientsType" name="ingredients"/>
+      <xs:element type="allergensType" name="allergens"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dishesType">
+    <xs:sequence>
+      <xs:element type="dishType" name="dish" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MenuType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="id"/>
+      <xs:element type="xs:string" name="title"/>
+      <xs:element type="dishesType" name="dishes"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
